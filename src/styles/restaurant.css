@@ -1,0 +1,23 @@
+.starter {
+    background-image: url(../images/restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20vh;
+}
+
+.soup {
+  background-image: url(../images/restaurant.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+}
+
+.main {
+  background-image: url(../images/restaurant.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+}
