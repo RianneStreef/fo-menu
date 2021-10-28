@@ -14,19 +14,34 @@ const RestaurantPage = (props) => {
       <div>
         <img scr={restaurantImg} alt="restaurant view" />
         <h1>Restaurant Menu</h1>
-        <Link to="/starter" className="restaurant-item">
+        <Link to="/entrees" className="restaurant-item">
           <div className="starter category">
-            <h2 className="category-title">Starter</h2>
+            <h2 className="category-title">Entrées / Starter</h2>
           </div>
         </Link>
-        <Link to="/soup" className="restaurant-item">
+        <Link to="/soupes" className="restaurant-item">
           <div className="soup category">
-            <h2 className="category-title">Soup</h2>
+            <h2 className="category-title">Soupes/ Soups</h2>
           </div>{" "}
         </Link>
-        <Link to="/main" className="restaurant-item">
+        <Link to="/plats" className="restaurant-item">
           <div className="main category">
-            <h2 className="category-title">Main</h2>
+            <h2 className="category-title">Plats / Main courses</h2>
+          </div>{" "}
+        </Link>
+        <Link to="/pates" className="restaurant-item">
+          <div className="main category">
+            <h2 className="category-title">Pâtes Fraîches / Fresh Pasta </h2>
+          </div>{" "}
+        </Link>
+        <Link to="/pizzas" className="restaurant-item">
+          <div className="main category">
+            <h2 className="category-title">Pizza </h2>
+          </div>{" "}
+        </Link>
+        <Link to="/desserts" className="restaurant-item">
+          <div className="main category">
+            <h2 className="category-title">Desserts</h2>
           </div>{" "}
         </Link>
       </div>

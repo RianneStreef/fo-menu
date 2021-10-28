@@ -1,7 +1,5 @@
 import React from "react";
 
-import { Link } from "gatsby";
-
 import { graphql } from "gatsby";
 
 const StarterPage = (props) => {
@@ -16,20 +14,25 @@ const StarterPage = (props) => {
     .filter((dish) => `/${dish.category}` === slug)
     .map((starter) => {
       return (
-        <Link key={starter.id} to={`/${starter.slug}`}>
+        <div key={starter.id}>
           <p>{starter.french}</p>
           <p>{starter.english}</p>
           <p>{starter.price}</p>
-        </Link>
+        </div>
       );
     });
 
   console.log(startersList);
-  return <div>{startersList}</div>;
+  return (
+    <div>
+      <h2>Entrées / Starters</h2>
+      {startersList}
+    </div>
+  );
 };
 
-export const restaurantQuery = graphql`
-  query dishes {
+export const starterQuery = graphql`
+  query starters {
     allContentfulDish {
       nodes {
         english
@@ -38,7 +41,8 @@ export const restaurantQuery = graphql`
         vega
         category
         takeAway
-        menu
+        snackMenu
+        restMenu
       }
     }
   }

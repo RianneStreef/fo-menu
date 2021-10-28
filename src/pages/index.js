@@ -5,7 +5,7 @@ import "../styles/menu.css";
 
 import logo from "../images/icon.png";
 
-const MenuPage = () => {
+const MenuPage = (props) => {
   return (
     <div>
       <img src={logo} alt="logo" className="logo" />
