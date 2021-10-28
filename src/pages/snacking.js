@@ -22,7 +22,7 @@ const SnackingPage = (props) => {
 
   return (
     <div>
-      <h2>Snacking</h2>
+      <h1>Snacking</h1>
       {snackList}
     </div>
   );

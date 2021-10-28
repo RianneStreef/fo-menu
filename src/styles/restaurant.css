@@ -1,5 +1,5 @@
 .starter {
-    background-image: url(../images/restaurant.jpg);
+    background-image: url(../images/entrees.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -7,7 +7,7 @@
 }
 
 .soup {
-  background-image: url(../images/restaurant.jpg);
+  background-image: url(../images/soup.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -21,3 +21,28 @@
   background-position: center;
   height: 20vh;
 }
+
+.pates {
+  background-image: url(../images/pates.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+}
+
+.pizza {
+  background-image: url(../images/pizza.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+}
+
+.dessert {
+  background-image: url(../images/desserts.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20vh;
+}
+

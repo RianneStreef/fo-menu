@@ -15,9 +15,10 @@ const StarterPage = (props) => {
     .map((starter) => {
       return (
         <div key={starter.id}>
-          <p>{starter.french}</p>
+          <div className="menu-line-1">
+            <p>{starter.french}</p> <p>{starter.price}</p>
+          </div>
           <p>{starter.english}</p>
-          <p>{starter.price}</p>
         </div>
       );
     });

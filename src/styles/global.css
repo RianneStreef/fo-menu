@@ -1,0 +1,26 @@
+body {
+  padding: 20px;
+}
+
+h1, h2, h3  {
+  font-family: "Quicksand";
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  font-family: "source sans pro";
+  margin: 0;
+  line-height: 25px;
+}
+
+.menu-line-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-top: 20px;
+}

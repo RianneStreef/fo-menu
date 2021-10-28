@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 
 import "../styles/menu.css";
+import "../styles/global.css";
 
 import logo from "../images/icon.png";
 

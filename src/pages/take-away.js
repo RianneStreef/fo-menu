@@ -75,6 +75,7 @@ const TakeAwayPage = (props) => {
 
   return (
     <div>
+      <h1>Emporter / Take Away</h1>
       <h2>Entrées / Starters</h2>
       {takeAwayStartersList}
       <h2>Plats/ Main Courses</h2>

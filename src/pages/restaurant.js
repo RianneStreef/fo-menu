@@ -4,15 +4,12 @@ import { Link } from "gatsby";
 
 import "../styles/restaurant.css";
 
-import restaurantImg from "../images/restaurant.jpg";
-
 const RestaurantPage = (props) => {
   console.log(props);
 
   return (
     <>
       <div>
-        <img scr={restaurantImg} alt="restaurant view" />
         <h1>Restaurant Menu</h1>
         <Link to="/entrees" className="restaurant-item">
           <div className="starter category">
@@ -30,17 +27,17 @@ const RestaurantPage = (props) => {
           </div>{" "}
         </Link>
         <Link to="/pates" className="restaurant-item">
-          <div className="main category">
+          <div className="pates category">
             <h2 className="category-title">Pâtes Fraîches / Fresh Pasta </h2>
           </div>{" "}
         </Link>
         <Link to="/pizzas" className="restaurant-item">
-          <div className="main category">
+          <div className="pizza category">
             <h2 className="category-title">Pizza </h2>
           </div>{" "}
         </Link>
         <Link to="/desserts" className="restaurant-item">
-          <div className="main category">
+          <div className="dessert category">
             <h2 className="category-title">Desserts</h2>
           </div>{" "}
         </Link>
