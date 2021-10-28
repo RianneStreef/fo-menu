@@ -11,8 +11,10 @@ const PastasPage = (props) => {
     .map((pasta) => {
       return (
         <div key={pasta.id}>
-          <p>{pasta.french}</p>
-          <p>{pasta.english}</p>
+          <div className="menu-line-1">
+            <p>{pasta.french}</p>
+            <p>{pasta.english}</p>
+          </div>
           <p>{pasta.price}</p>
         </div>
       );

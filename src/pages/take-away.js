@@ -14,9 +14,11 @@ const TakeAwayPage = (props) => {
     .map((takeAwayStarter) => {
       return (
         <div key={takeAwayStarter.id}>
-          <p>{takeAwayStarter.french}</p>
+          <div className="menu-line-1">
+            <p>{takeAwayStarter.french}</p>
+            <p>{takeAwayStarter.price}</p>
+          </div>
           <p>{takeAwayStarter.english}</p>
-          <p>{takeAwayStarter.price}</p>
         </div>
       );
     });
@@ -27,9 +29,11 @@ const TakeAwayPage = (props) => {
     .map((takeAwayMain) => {
       return (
         <div key={takeAwayMain.id}>
-          <p>{takeAwayMain.french}</p>
+          <div className="menu-line-1">
+            <p>{takeAwayMain.french}</p>
+            <p>{takeAwayMain.price}</p>
+          </div>
           <p>{takeAwayMain.english}</p>
-          <p>{takeAwayMain.price}</p>
         </div>
       );
     });
@@ -40,9 +44,11 @@ const TakeAwayPage = (props) => {
     .map((takeAwayDesserts) => {
       return (
         <div key={takeAwayDesserts.id}>
-          <p>{takeAwayDesserts.french}</p>
+          <div className="menu-line-1">
+            <p>{takeAwayDesserts.french}</p>
+            <p>{takeAwayDesserts.price}</p>
+          </div>
           <p>{takeAwayDesserts.english}</p>
-          <p>{takeAwayDesserts.price}</p>
         </div>
       );
     });
@@ -53,9 +59,11 @@ const TakeAwayPage = (props) => {
     .map((takeAwayPizza) => {
       return (
         <div key={takeAwayPizza.id}>
-          <p>{takeAwayPizza.french}</p>
+          <div className="menu-line-1">
+            <p>{takeAwayPizza.french}</p>
+            <p>{takeAwayPizza.price}</p>
+          </div>
           <p>{takeAwayPizza.english}</p>
-          <p>{takeAwayPizza.price}</p>
         </div>
       );
     });
@@ -66,9 +74,11 @@ const TakeAwayPage = (props) => {
     .map((takeAwayFocaccia) => {
       return (
         <div key={takeAwayFocaccia.id}>
-          <p>{takeAwayFocaccia.french}</p>
+          <div className="menu-line-1">
+            <p>{takeAwayFocaccia.french}</p>
+            <p>{takeAwayFocaccia.price}</p>
+          </div>
           <p>{takeAwayFocaccia.english}</p>
-          <p>{takeAwayFocaccia.price}</p>
         </div>
       );
     });

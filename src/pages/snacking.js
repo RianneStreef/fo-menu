@@ -13,9 +13,11 @@ const SnackingPage = (props) => {
     .map((snack) => {
       return (
         <div key={snack.id}>
-          <p>{snack.french}</p>
+          <div className="menu-line-1">
+            <p>{snack.french}</p>
+            <p>{snack.price}</p>
+          </div>
           <p>{snack.english}</p>
-          <p>{snack.price}</p>
         </div>
       );
     });

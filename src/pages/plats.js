@@ -11,8 +11,10 @@ const SoupsPage = (props) => {
     .map((main) => {
       return (
         <div key={main.id}>
-          <p>{main.french}</p>
-          <p>{main.english}</p>
+          <div className="menu-line-1">
+            <p>{main.french}</p>
+            <p>{main.english}</p>
+          </div>
           <p>{main.price}</p>
         </div>
       );
