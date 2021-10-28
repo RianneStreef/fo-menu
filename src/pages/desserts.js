@@ -13,9 +13,9 @@ const DessertsPage = (props) => {
         <div key={dessert.id}>
           <div className="menu-line-1">
             <p>{dessert.french}</p>
-            <p>{dessert.english}</p>
+            <p>{dessert.price}</p>
           </div>
-          <p>{dessert.price}</p>
+          <p>{dessert.english}</p>
         </div>
       );
     });
