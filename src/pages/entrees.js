@@ -50,6 +50,7 @@ export const starterQuery = graphql`
         id
         price
         index
+        vega
       }
     }
   }
