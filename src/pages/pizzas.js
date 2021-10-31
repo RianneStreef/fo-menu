@@ -7,6 +7,7 @@ import homepage from "../images/homepage.svg";
 
 const PizzasPage = (props) => {
   let pizzas = props.data.allContentfulPizza.nodes;
+  let focaccias = props.data.allContentfulFocaccia.nodes;
 
   const pizzasList = pizzas.map((pizza) => {
     return (
@@ -18,6 +19,20 @@ const PizzasPage = (props) => {
           <p className="price">{pizza.price}</p>
         </div>
         <p className="english">{pizza.english}</p>
+      </div>
+    );
+  });
+
+  const focacciasList = focaccias.map((focaccia) => {
+    return (
+      <div key={focaccia.id}>
+        <div className="menu-line-1">
+          <p>
+            {focaccia.french} {focaccia.vega && <span className="vega">V</span>}
+          </p>
+          <p className="price">{focaccia.price}</p>
+        </div>
+        <p className="english">{focaccia.english}</p>
       </div>
     );
   });
@@ -34,6 +49,7 @@ const PizzasPage = (props) => {
       </div>
       <h2>Pizzas</h2>
       {pizzasList}
+      {focacciasList}
     </div>
   );
 };
@@ -46,6 +62,15 @@ export const pizzasQuery = graphql`
         id
         index
         price
+      }
+    }
+    allContentfulFocaccia(sort: { fields: index }) {
+      nodes {
+        french
+        id
+        index
+        price
+        takeAway
       }
     }
   }
