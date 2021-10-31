@@ -18,6 +18,7 @@ h1, h2, h3  {
 
 h2 {
   font-size: 17px;
+  margin: 50px 0;
 }
 
 p {
@@ -40,6 +41,8 @@ p {
 
 .price {
   margin-left: 20px;
+  width: 60px;
+  text-align: right;
 }
 
 
