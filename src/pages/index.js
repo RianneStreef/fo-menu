@@ -6,7 +6,7 @@ const IndexPage = () => {
   useEffect(() => {
     setTimeout(function () {
       window.location.href = "./menus";
-    }, 2500);
+    }, 1000);
   });
 
   return (
