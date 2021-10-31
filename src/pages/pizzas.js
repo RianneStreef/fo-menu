@@ -2,26 +2,36 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
-const PizzasPage = (props) => {
-  let dishes = props.data.allContentfulDish.nodes;
-  let slug = props.location.pathname;
+import back from "../images/back.svg";
+import homepage from "../images/homepage.svg";
 
-  const pizzasList = dishes
-    .filter((dish) => `/${dish.category}` === slug)
-    .map((pizza) => {
-      return (
-        <div key={pizza.id}>
-          <div className="menu-line-1">
-            <p>{pizza.french}</p>
-            <p>{pizza.price}</p>
-          </div>
-          <p>{pizza.english}</p>
+const PizzasPage = (props) => {
+  let pizzas = props.data.allContentfulPizza.nodes;
+
+  const pizzasList = pizzas.map((pizza) => {
+    return (
+      <div key={pizza.id}>
+        <div className="menu-line-1">
+          <p>
+            {pizza.french} {pizza.vega && <span className="vega">V</span>}
+          </p>
+          <p className="price">{pizza.price}</p>
         </div>
-      );
-    });
+        <p className="english">{pizza.english}</p>
+      </div>
+    );
+  });
 
   return (
-    <div>
+    <div className="padding">
+      <div className="nav">
+        <a href="javascript:history.back()" className="back-icon">
+          <img src={back} />
+        </a>
+        <a href="https://lafaceouest.com/ " className="homepage-icon">
+          <img src={homepage} />
+        </a>
+      </div>
       <h2>Pizzas</h2>
       {pizzasList}
     </div>
@@ -30,16 +40,12 @@ const PizzasPage = (props) => {
 
 export const pizzasQuery = graphql`
   query pizzas {
-    allContentfulDish {
+    allContentfulPizza(sort: { fields: index }) {
       nodes {
-        english
         french
+        id
+        index
         price
-        vega
-        category
-        takeAway
-        snackMenu
-        restMenu
       }
     }
   }

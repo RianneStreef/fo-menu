@@ -2,35 +2,43 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
-const TakeAwayPage = (props) => {
-  let dishes = props.data.allContentfulDish.nodes;
+import back from "../images/back.svg";
+import homepage from "../images/homepage.svg";
 
-  console.log(props);
-  console.log(dishes);
+const TakeAwayPage = (props) => {
+  let dishes = props.data.allContentfulTakeAway.nodes;
+  let pizzas = props.data.allContentfulPizza.nodes;
+  let focaccias = props.data.allContentfulFocaccia.nodes;
+
+  console.log(pizzas);
 
   const takeAwayStartersList = dishes
-    .filter((dish) => dish.takeAway === true)
-    .filter((takeAway) => takeAway.category === "entrees")
+    .filter((takeAway) => takeAway.category === "starter")
     .map((takeAwayStarter) => {
       return (
         <div key={takeAwayStarter.id}>
           <div className="menu-line-1">
-            <p>{takeAwayStarter.french}</p>
-            <p>{takeAwayStarter.price}</p>
+            <p>
+              {takeAwayStarter.french}{" "}
+              {takeAwayStarter.vega && <span className="vega">V</span>}
+            </p>
+            <p className="price">{takeAwayStarter.price}</p>
           </div>
-          <p>{takeAwayStarter.english}</p>
+          <p className="english">{takeAwayStarter.english}</p>
         </div>
       );
     });
 
   const takeAwayMainsList = dishes
-    .filter((dish) => dish.takeAway === true)
-    .filter((takeAway) => takeAway.category === "plats")
+    .filter((takeAway) => takeAway.category === "main")
     .map((takeAwayMain) => {
       return (
         <div key={takeAwayMain.id}>
           <div className="menu-line-1">
-            <p>{takeAwayMain.french}</p>
+            <p>
+              {takeAwayMain.french}{" "}
+              {takeAwayMain.vega && <span className="vega">V</span>}
+            </p>
             <p>{takeAwayMain.price}</p>
           </div>
           <p>{takeAwayMain.english}</p>
@@ -39,13 +47,15 @@ const TakeAwayPage = (props) => {
     });
 
   const takeAwayDessertsList = dishes
-    .filter((dish) => dish.takeAway === true)
-    .filter((takeAway) => takeAway.category === "desserts")
+    .filter((takeAway) => takeAway.category === "dessert")
     .map((takeAwayDesserts) => {
       return (
         <div key={takeAwayDesserts.id}>
           <div className="menu-line-1">
-            <p>{takeAwayDesserts.french}</p>
+            <p>
+              {takeAwayDesserts.french}{" "}
+              {takeAwayDesserts.vega && <span className="vega">V</span>}
+            </p>
             <p>{takeAwayDesserts.price}</p>
           </div>
           <p>{takeAwayDesserts.english}</p>
@@ -53,30 +63,34 @@ const TakeAwayPage = (props) => {
       );
     });
 
-  const takeAwayPizzasList = dishes
-    .filter((dish) => dish.takeAway === true)
-    .filter((takeAway) => takeAway.category === "pizzas")
+  const takeAwayPizzasList = pizzas
+    .filter((takeAway) => takeAway.takeAway === true)
     .map((takeAwayPizza) => {
       return (
         <div key={takeAwayPizza.id}>
           <div className="menu-line-1">
-            <p>{takeAwayPizza.french}</p>
-            <p>{takeAwayPizza.price}</p>
+            <p>
+              {takeAwayPizza.french}{" "}
+              {takeAwayPizza.vega && <span className="vega">V</span>}
+            </p>
+            <p>{takeAwayPizza.takeAwayPrice}</p>
           </div>
           <p>{takeAwayPizza.english}</p>
         </div>
       );
     });
 
-  const takeAwayFocacciasList = dishes
-    .filter((dish) => dish.takeAway === true)
-    .filter((takeAway) => takeAway.category === "focaccias")
+  const takeAwayFocacciasList = focaccias
+    .filter((takeAway) => takeAway.takeAway === true)
     .map((takeAwayFocaccia) => {
       return (
         <div key={takeAwayFocaccia.id}>
           <div className="menu-line-1">
-            <p>{takeAwayFocaccia.french}</p>
-            <p>{takeAwayFocaccia.price}</p>
+            <p>
+              {takeAwayFocaccia.french}{" "}
+              {takeAwayFocaccia.vega && <span className="vega">V</span>}
+            </p>
+            <p>{takeAwayFocaccia.takeAwayPrice}</p>
           </div>
           <p>{takeAwayFocaccia.english}</p>
         </div>
@@ -84,7 +98,15 @@ const TakeAwayPage = (props) => {
     });
 
   return (
-    <div>
+    <div className="padding">
+      <div className="nav">
+        <a href="javascript:history.back()" className="back-icon">
+          <img src={back} />
+        </a>
+        <a href="https://lafaceouest.com/ " className="homepage-icon">
+          <img src={homepage} />
+        </a>
+      </div>
       <h1>Emporter / Take Away</h1>
       <h2>Entrées / Starters</h2>
       {takeAwayStartersList}
@@ -101,16 +123,33 @@ const TakeAwayPage = (props) => {
 
 export const takeAwayQuery = graphql`
   query takeAway {
-    allContentfulDish {
+    allContentfulTakeAway(sort: { fields: index }) {
       nodes {
+        category
         english
         french
+        id
+        index
         price
         vega
-        category
+      }
+    }
+    allContentfulPizza(sort: { fields: index }) {
+      nodes {
+        french
+        id
+        index
+        takeAwayPrice
         takeAway
-        snackMenu
-        restMenu
+      }
+    }
+    allContentfulFocaccia(sort: { fields: index }) {
+      nodes {
+        french
+        id
+        index
+        takeAwayPrice
+        takeAway
       }
     }
   }

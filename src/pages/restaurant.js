@@ -4,11 +4,20 @@ import { Link } from "gatsby";
 
 import "../styles/restaurant.css";
 
-const RestaurantPage = (props) => {
-  console.log(props);
+import back from "../images/back.svg";
+import homepage from "../images/homepage.svg";
 
+const RestaurantPage = () => {
   return (
-    <>
+    <div className="padding">
+      <div className="nav">
+        <a href="javascript:history.back()" className="back-icon">
+          <img src={back} />
+        </a>
+        <a href="https://lafaceouest.com/ " className="homepage-icon">
+          <img src={homepage} />
+        </a>
+      </div>
       <div>
         <h1>Restaurant Menu</h1>
         <Link to="/entrees" className="restaurant-item">
@@ -42,7 +51,7 @@ const RestaurantPage = (props) => {
           </div>{" "}
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

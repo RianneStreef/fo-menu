@@ -2,26 +2,44 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
-const SoupsPage = (props) => {
-  let dishes = props.data.allContentfulDish.nodes;
-  let slug = props.location.pathname;
+import back from "../images/back.svg";
+import homepage from "../images/homepage.svg";
 
-  const mainsList = dishes
-    .filter((dish) => `/${dish.category}` === slug)
-    .map((main) => {
-      return (
-        <div key={main.id}>
-          <div className="menu-line-1">
-            <p>{main.french}</p>
-            <p>{main.english}</p>
-          </div>
-          <p>{main.price}</p>
+const MainsPage = (props) => {
+  let mains = props.data.allContentfulMain.nodes;
+
+  const mainsList = mains.map((main) => {
+    return (
+      <div key={main.id}>
+        <div className="menu-line-1">
+          <p>
+            {main.french}{" "}
+            {main.eveningOnly && (
+              <span className="evening">soir uniquement</span>
+            )}
+            {main.vega && <span className="vega">V</span>}
+          </p>
+
+          <p className="price">{main.price}</p>
         </div>
-      );
-    });
+        <p className="english">
+          {main.english}{" "}
+          {main.eveningOnly && <span className="evening">evening only</span>}
+        </p>
+      </div>
+    );
+  });
 
   return (
-    <div>
+    <div className="padding">
+      <div className="nav">
+        <a href="javascript:history.back()" className="back-icon">
+          <img src={back} />
+        </a>
+        <a href="https://lafaceouest.com/ " className="homepage-icon">
+          <img src={homepage} />
+        </a>
+      </div>
       <h2>Plats / Mains courses</h2>
       {mainsList}
     </div>
@@ -30,19 +48,18 @@ const SoupsPage = (props) => {
 
 export const mainsQuery = graphql`
   query mains {
-    allContentfulDish {
+    allContentfulMain(sort: { fields: index }) {
       nodes {
         english
         french
+        id
+        index
         price
         vega
-        category
-        takeAway
-        snackMenu
-        restMenu
+        eveningOnly
       }
     }
   }
 `;
 
-export default SoupsPage;
+export default MainsPage;
