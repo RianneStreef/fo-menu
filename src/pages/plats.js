@@ -42,6 +42,15 @@ const MainsPage = (props) => {
       </div>
       <h2>Plats / Mains courses</h2>
       {mainsList}
+      <p className="sauces">
+        <b>
+          <u>Sauces au choix:</u>
+          {"  "}
+        </b>
+        Béarnaise maison <b>4</b> / Gorgonzola <b>3</b> / Poivre noir
+        <span className="vega">V</span>
+        <b>3</b>
+      </p>
     </div>
   );
 };
