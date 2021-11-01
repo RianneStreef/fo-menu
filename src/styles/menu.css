@@ -11,10 +11,10 @@ img {
 }
 
 .snacking{
-  background-image: url(../images/snacking.jpg);
+  background-image: url(../images/banner-snack.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: bottom;
   height: 20vh;
 
 }

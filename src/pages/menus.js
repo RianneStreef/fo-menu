@@ -6,21 +6,12 @@ import "../styles/global.css";
 
 import logo from "../images/icon.png";
 
-import back from "../images/back.svg";
-import homepage from "../images/homepage.svg";
-
 const MenuPage = (props) => {
   return (
     <div className="padding">
-      <div className="nav">
-        <a href="javascript:history.back()" className="back-icon">
-          <img src={back} />
-        </a>
-        <a href="https://lafaceouest.com/ " className="homepage-icon">
-          <img src={homepage} />
-        </a>
-      </div>
-      <img src={logo} alt="logo" className="logo" />
+      <a href="https://lafaceouest.com/ ">
+        <img src={logo} alt="logo" className="logo" />
+      </a>
       <Link to="/restaurant" className="category-item">
         <div className="restaurant category">
           <h2 className="category-title">Restaurant</h2>

@@ -47,6 +47,7 @@ export const snackQuery = graphql`
         id
         index
         price
+        vega
       }
     }
   }

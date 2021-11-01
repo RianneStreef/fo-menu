@@ -1,13 +1,13 @@
 .starter {
-    background-image: url(../images/entrees.jpeg);
+    background-image: url(../images/banner-starters.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right;
     height: 20vh;
 }
 
 .soup {
-  background-image: url(../images/soup.jpeg);
+  background-image: url(../images/banner-soup.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,7 +23,7 @@
 }
 
 .pates {
-  background-image: url(../images/pates.jpeg);
+  background-image: url(../images/banner-pasta.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -39,7 +39,7 @@
 }
 
 .dessert {
-  background-image: url(../images/desserts.jpeg);
+  background-image: url(../images/banner-dessert.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
