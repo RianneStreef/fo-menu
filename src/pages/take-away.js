@@ -39,7 +39,7 @@ const TakeAwayPage = (props) => {
               {takeAwayMain.french}{" "}
               {takeAwayMain.vega && <span className="vega">V</span>}
             </p>
-            <p>{takeAwayMain.price}</p>
+            <p className="price">{takeAwayMain.price}</p>
           </div>
           <p>{takeAwayMain.english}</p>
         </div>
@@ -56,7 +56,7 @@ const TakeAwayPage = (props) => {
               {takeAwayDesserts.french}{" "}
               {takeAwayDesserts.vega && <span className="vega">V</span>}
             </p>
-            <p>{takeAwayDesserts.price}</p>
+            <p className="price">{takeAwayDesserts.price}</p>
           </div>
           <p>{takeAwayDesserts.english}</p>
         </div>
@@ -73,7 +73,7 @@ const TakeAwayPage = (props) => {
               {takeAwayPizza.french}{" "}
               {takeAwayPizza.vega && <span className="vega">V</span>}
             </p>
-            <p>{takeAwayPizza.takeAwayPrice}</p>
+            <p className="price">{takeAwayPizza.takeAwayPrice}</p>
           </div>
           <p>{takeAwayPizza.english}</p>
         </div>
@@ -90,7 +90,7 @@ const TakeAwayPage = (props) => {
               {takeAwayFocaccia.french}{" "}
               {takeAwayFocaccia.vega && <span className="vega">V</span>}
             </p>
-            <p>{takeAwayFocaccia.takeAwayPrice}</p>
+            <p className="price">{takeAwayFocaccia.takeAwayPrice}</p>
           </div>
           <p>{takeAwayFocaccia.english}</p>
         </div>
