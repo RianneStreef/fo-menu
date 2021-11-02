@@ -5,6 +5,8 @@ import { graphql } from "gatsby";
 import back from "../images/back.svg";
 import homepage from "../images/homepage.svg";
 
+import { Helmet } from "react-helmet";
+
 const DessertsPage = (props) => {
   let desserts = props.data.allContentfulDessert.nodes;
 
@@ -23,20 +25,35 @@ const DessertsPage = (props) => {
   });
 
   return (
-    <div className="padding">
-      <div className="nav">
-        <a href="javascript:history.back()" className="back-icon">
-          <img src={back} />
-        </a>
-        <a href="https://lafaceouest.com/ " className="homepage-icon">
-          <img src={homepage} />
-        </a>
+    <>
+      <Helmet>
+        <title>Desserts</title>
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="description"
+          content="Menu Restaurant La Face Ouest Val Thorens"
+        />
+        <meta
+          name="keywords"
+          content="menu, restaurant, La Face Ouest, Val Thorens, pizza, snack, take away"
+        />
+        <link rel="canonical" href="https://menu-lafaceouest.com/" />
+      </Helmet>
+      <div className="padding">
+        <div className="nav">
+          <a href="javascript:history.back()" className="back-icon">
+            <img src={back} />
+          </a>
+          <a href="https://lafaceouest.com/ " className="homepage-icon">
+            <img src={homepage} />
+          </a>
+        </div>
+        <div>
+          <h2>Desserts</h2>
+          {dessertsList}
+        </div>
       </div>
-      <div>
-        <h2>Desserts</h2>
-        {dessertsList}
-      </div>
-    </div>
+    </>
   );
 };
 
