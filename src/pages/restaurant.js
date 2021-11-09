@@ -5,8 +5,7 @@ import { Helmet } from "react-helmet";
 
 import "../styles/restaurant.css";
 
-import back from "../images/back.svg";
-import homepage from "../images/homepage.svg";
+import Nav from "../components/Nav";
 
 const RestaurantPage = () => {
   return (
@@ -25,14 +24,7 @@ const RestaurantPage = () => {
         <link rel="canonical" href="https://menu-lafaceouest.com/" />
       </Helmet>
       <div className="padding">
-        <div className="nav">
-          <a href="javascript:history.back()" className="back-icon">
-            <img src={back} />
-          </a>
-          <a href="https://lafaceouest.com/ " className="homepage-icon">
-            <img src={homepage} />
-          </a>
-        </div>
+        <Nav />
         <div>
           <h1>Restaurant Menu</h1>
           <Link to="/entrees" className="restaurant-item">

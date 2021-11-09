@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  background-color: white;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  transition: transform 0.4s;
+}
+
+.back-icon {
+  width: 3%;
+
+}
+
+.homepage-icon {
+  width: 20%;
+}
+
+.scroll-down .nav {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up .nav{
+  transform: none;
+}

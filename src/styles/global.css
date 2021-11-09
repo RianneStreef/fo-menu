@@ -29,6 +29,7 @@ p {
 
 .padding {
   padding: 20px;
+  margin-top: 40px;
 }
 
 .menu-line-1 {
@@ -62,20 +63,7 @@ p {
   margin:  0 10px;
 }
 
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.back-icon {
-  width: 3%;
-}
-
-.homepage-icon {
-  width: 5%;
-}
 
 .sauces {
   margin-top: 30px;
