@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+
+import { Link } from "gatsby";
 
 import "../styles/Nav.css";
 
@@ -6,6 +8,16 @@ import back from "../images/back.svg";
 import homepage from "../images/icon.png";
 
 const Nav = () => {
+  const [pathname, setPathname] = useState(``);
+  console.log(pathname);
+
+  useEffect(() => {
+    if (typeof window !== `undefined`) {
+      const location = window.location.pathname;
+      setPathname(location);
+    }
+  }, []);
+
   useEffect(() => {
     const nav = document.getElementById("nav");
     console.log(nav);
@@ -35,9 +47,18 @@ const Nav = () => {
 
   return (
     <nav className="nav scroll-up" id="nav">
-      <a href="javascript:history.back()" className="back-icon">
+      <Link
+        href={
+          pathname === "/restaurant" ||
+          pathname === "/snacking" ||
+          pathname === "/take-away"
+            ? "/menus"
+            : "/restaurant"
+        }
+        className="back-icon"
+      >
         <img src={back} />
-      </a>
+      </Link>
       <a href="https://lafaceouest.com/ " className="homepage-icon">
         <img src={homepage} />
       </a>
