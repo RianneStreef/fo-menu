@@ -3,8 +3,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 
-import back from "../images/back.svg";
-import homepage from "../images/homepage.svg";
+import Nav from "../components/Nav";
 
 const TakeAwayPage = (props) => {
   let dishes = props.data.allContentfulTakeAway.nodes;
@@ -114,14 +113,7 @@ const TakeAwayPage = (props) => {
         <link rel="canonical" href="https://menu-lafaceouest.com/" />
       </Helmet>
       <div className="padding">
-        <div className="nav">
-          <a href="javascript:history.back()" className="back-icon">
-            <img src={back} />
-          </a>
-          <a href="https://lafaceouest.com/ " className="homepage-icon">
-            <img src={homepage} />
-          </a>
-        </div>
+        <Nav />
         <h1>Emporter / Take Away</h1>
         <h2>Entrées / Starters</h2>
         {takeAwayStartersList}
