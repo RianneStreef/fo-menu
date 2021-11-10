@@ -10,8 +10,6 @@ const TakeAwayPage = (props) => {
   let pizzas = props.data.allContentfulPizza.nodes;
   let focaccias = props.data.allContentfulFocaccia.nodes;
 
-  console.log(pizzas);
-
   const takeAwayStartersList = dishes
     .filter((takeAway) => takeAway.category === "starter")
     .map((takeAwayStarter) => {
