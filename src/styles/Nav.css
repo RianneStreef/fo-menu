@@ -7,23 +7,24 @@
   background-color: white;
   top: 0;
   left: 0;
+  right: 0;
   padding: 20px;
   transition: transform 0.4s;
 }
 
 .back-icon {
-  width: 3%;
+  width: 15px;
 
 }
 
 .homepage-icon {
-  width: 20%;
+  width: 70px;
 }
 
-.scroll-down .nav {
+.scroll-down  {
   transform: translate3d(0, -100%, 0);
 }
 
-.scroll-up .nav{
+.scroll-up {
   transform: none;
 }
