@@ -9,7 +9,6 @@ import homepage from "../images/icon.png";
 
 const Nav = () => {
   const [pathname, setPathname] = useState(``);
-  console.log(pathname);
 
   useEffect(() => {
     if (typeof window !== `undefined`) {
@@ -20,7 +19,6 @@ const Nav = () => {
 
   useEffect(() => {
     const nav = document.getElementById("nav");
-    console.log(nav);
     const scrollUp = "scroll-up";
     const scrollDown = "scroll-down";
     let lastScroll = 0;
