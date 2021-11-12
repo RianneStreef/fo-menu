@@ -48,9 +48,9 @@ const Nav = () => {
     <nav className="nav scroll-up" id="nav">
       <Link
         href={
-          pathname === "/restaurant" ||
-          pathname === "/snacking" ||
-          pathname === "/take-away"
+          pathname === "/restaurant/" ||
+          pathname === "/snacking/" ||
+          pathname === "/take-away/"
             ? "/menus"
             : "/restaurant"
         }
