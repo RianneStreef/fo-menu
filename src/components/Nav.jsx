@@ -49,8 +49,11 @@ const Nav = () => {
       <Link
         href={
           pathname === "/restaurant/" ||
+          pathname === "/restaurant" ||
           pathname === "/snacking/" ||
-          pathname === "/take-away/"
+          pathname === "/snacking" ||
+          pathname === "/take-away/" ||
+          pathname === "/take-away"
             ? "/menus"
             : "/restaurant"
         }
