@@ -18,6 +18,7 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
+    console.log(pathname);
     const nav = document.getElementById("nav");
     const scrollUp = "scroll-up";
     const scrollDown = "scroll-down";
