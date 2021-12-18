@@ -59,10 +59,10 @@ const Nav = () => {
         }
         className="back-icon"
       >
-        <img src={back} />
+        <img src={back} alt="back" />
       </Link>
       <a href="https://lafaceouest.com/ " className="homepage-icon">
-        <img src={homepage} />
+        <img src={homepage} alt="homepage" />
       </a>
     </nav>
   );

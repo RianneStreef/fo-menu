@@ -27,11 +27,11 @@ const MenuPage = () => {
         <a href="https://lafaceouest.com/ ">
           <img src={logo} alt="logo" className="logo" />
         </a>
-        <Link to="/restaurant" className="category-item">
+        {/* <Link to="/restaurant" className="category-item">
           <div className="restaurant category">
             <h2 className="category-title">Restaurant</h2>
           </div>
-        </Link>
+        </Link> */}
         <Link to="/snacking" className="category-item">
           <div className="snacking category">
             <h2 className="category-title">Snacking</h2>
