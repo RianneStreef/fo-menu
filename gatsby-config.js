@@ -9,6 +9,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: ["G-ZZDV8FZKTE"],
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+        },
+        // defaults to false
+        enableWebVitalsTracking: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         accessToken: "s9DGj8OQF66K7HgKXspXEopmvURH7JrpYTse_1N7CDQ",
